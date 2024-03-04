@@ -46,3 +46,22 @@ const result = getDeepValues(obj, "bar", "d");
 
 console.log(result);
 
+// keyof
+type Course = {
+  title: string;
+  subtitle: string;
+  lessonsCount: number;
+}
+const course: Course = {
+  title: "Typescript Bootcamp",
+  subtitle: "Learn the language, build practical projects",
+  lessonsCount: 100
+}
+
+export function extractProperty<T, K extends keyof T>(data: T, property:K) {
+  return data[property];
+}
+
+const val = extractProperty(course, 'lessonsCount');
+
+

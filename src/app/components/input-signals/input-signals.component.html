@@ -1,0 +1,14 @@
+<ul class="pagination">
+  <!-- Now we don't need to user directive *ngFor -->
+  @for(page of pages(); track $index){
+  <li (click)="changePage.emit(page)">
+    <span class="page-link">{{ page }}</span>
+  </li>
+  } @empty {
+  <div class="empty-view">No pages over here</div>
+  }
+
+  <!-- <li *ngFor="let page of pages()" (click)="changePage.emit(page)">
+    <span class="page-link">{{ page }}</span>
+  </li> -->
+</ul>
